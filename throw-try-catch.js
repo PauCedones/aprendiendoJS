@@ -46,6 +46,9 @@ catch(err){
 
 /*ejemplo de finally */
 
+
+
+
 throw 500;
 finally{
     console.log("Proceso terminado en x segundos");
