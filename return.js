@@ -150,40 +150,70 @@ const sumarDos = (numero) => {
     }
 
 
-    /***********************************************
+/***********************************************
  * 
  * 1. Hacer una función que guarde una lista
  *    de listas de datos de personas. Deberia
  *    guardar por cada persona, una lista de datos
  *    que incluyan el nombre completo, la edad y 
  *    la dirección de email.
+* 1b. Al ingresar nueva persona, validar que no 
+*     exista en la lista. Si existe, tirar
+*     un error. (Usar funcion distinta para validar
+*     y llamar dentro de la funcion de guardar persona).
  * 2. Hacer una función que me devuelva la lista
  *    completa de personas.
  * 3. Hacer una función que me permita encontrar
  *    una persona por email.
  * 4. Hacer una función que me permita encontrar 
  *    personas por nombre o parte del nombre.
- * 
+ * 5. Hacer una función para borrar personas por mail.
+ * 6. Hacer una funcion que permita modificar nombre
+ *    buscando por mail.
+ * 7. Hacer una funcion que permita modificar edad 
+ *    buscando por mail.
  * Observaciones: Google. Mucho google.
  * 
  ************************************************/
+let datos = [];
+
+const validar_datos = (nombre, correo) =>{
+
+
+    for( i = 0; i < datos.length ; i++){
+
+        let nombre_actual = datos[i][0];
+        let correo_actual = datos[i][2];
+
+        if (nombre_actual==nombre && correo_actual==correo) {
+            
+            throw "Usurpador de identidad" ; 
+  
+        }
+    }
+ }
 
  const datos_lista = () => {
 
-    let datos=[];
-     let nombre = prompt("Cual es tu nombre completo?");
-     let edad = prompt("cual es tu edad?");
-     let correo = prompt("cual es tu email?");
-     
-     datos.push(nombre,edad,correo);
-
-     console.log (datos);
+    let persona=[];
     
+    let nombre = prompt("Cual es tu nombre?");
+    let edad = prompt("cual es tu edad?");
+    let correo = prompt("cual es tu email?");
+
+    validar_datos();
+    
+    persona.push(nombre,edad,correo);
+    console.log (persona);
+
+    datos.push(persona);
+    console.log (datos);
+
  }
- datos_lista();
- datos_lista();
- datos_lista();   
+
+ datos_lista(); 
+ datos_lista(); 
+ datos_lista(); 
  
 
- const 
 
