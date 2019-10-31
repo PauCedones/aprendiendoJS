@@ -177,6 +177,8 @@ const sumarDos = (numero) => {
  ************************************************/
 let datos = [];
 
+// PUNTO 1B
+
 const validar_datos = (nombre, correo) =>{
 
 
@@ -193,6 +195,8 @@ const validar_datos = (nombre, correo) =>{
     }
  }
 
+ // PUNTO 1
+
  const datos_lista = () => {
 
     let persona=[];
@@ -201,7 +205,7 @@ const validar_datos = (nombre, correo) =>{
     let edad = prompt("cual es tu edad?");
     let correo = prompt("cual es tu email?");
 
-    validar_datos();
+    validar_datos(nombre,correo);
     
     persona.push(nombre,edad,correo);
     console.log (persona);
@@ -215,5 +219,83 @@ const validar_datos = (nombre, correo) =>{
  datos_lista(); 
  datos_lista(); 
  
+// PUNTO 2
+
+const ver_lista = () =>{
+
+   return(datos);
+}
+
+ver_lista();
+
+// PUNTO 3
+
+const correo_acceso_persona = () => {
+
+    let correo = prompt("cual es la direccion de mail de esa persona?");
+
+    for( i = 0; i < datos.length ; i++){
+
+        let correo_actual = datos[i][2];
+        let nombre_actual = datos[i][0];
+
+        if (correo_actual==correo) {
+            
+           alert(nombre_actual); 
+  
+        }
+    }
+}
+
+correo_acceso_persona();
+
+//PUNTO 4
+
+const buscar_nombre =(buscar)=>{
+    let caca = [];
+
+    for( i = 0; i < datos.length ; i++){
+
+        let nombre_actual = datos[i][0];
 
 
+        if (nombre_actual.indexOf(buscar) != -1){
+
+            caca.push(nombre_actual);
+
+        }
+
+    }
+    console.log(caca);
+}
+
+buscar_nombre("p");
+
+
+// PUNTO 5
+
+// 5. Hacer una función para borrar personas por mail.
+
+// tengo que hacer dos variables que seleccionen mi sub array nombre y sub array correo
+//tengo que poner un parametro para buscar el mail deseado
+//tengo que buscar en base a toda la lista, por ende tengo que hacer un bucle
+//adentro de ese bucle tengo que verificar lo que busco
+
+const eliminar =(buscar)=>{
+
+    for (let i=0; i < datos.length; i++){
+
+        let nombre = datos [i][0];
+        let correo = datos [i][2];
+
+        if (correo.indexOf(buscar) != -1){
+
+            correo.splice(nombre);
+        }
+
+    }
+    console.log(datos);
+}
+
+eliminar ("paula@");
+//tenes que sacar todo lo que conlleva a la persona, no solo el nombre
