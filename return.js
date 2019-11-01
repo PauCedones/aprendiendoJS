@@ -228,6 +228,10 @@ const ver_lista = () =>{
 
 ver_lista();
 
+//normalmente se usa el termino GET ej getpersonas
+//intenta no repetir siempre el codigo
+// no reinventar la rueda: busca en google todas las soluciones, copy/paste
+
 // PUNTO 3
 
 const correo_acceso_persona = () => {
@@ -249,6 +253,10 @@ const correo_acceso_persona = () => {
 
 correo_acceso_persona();
 
+//varias formas de hacerlo
+// en el punto 1b reutilizo este codigo en vez de repetir, reutilizacion de codigo
+
+
 //PUNTO 4
 
 const buscar_nombre =(buscar)=>{
@@ -262,11 +270,13 @@ const buscar_nombre =(buscar)=>{
         if (nombre_actual.indexOf(buscar) != -1){
 
             caca.push(nombre_actual);
+            // se puede usar return nombre_actual[i]
 
         }
-
+    
     }
     console.log(caca);
+    // y al final se usa return: false;
 }
 
 buscar_nombre("p");
@@ -299,3 +309,33 @@ const eliminar =(buscar)=>{
 
 eliminar ("paula@");
 //tenes que sacar todo lo que conlleva a la persona, no solo el nombre
+
+
+/* VARIAS FORMAS DE HACER
+
+const deletePersonaByEmail = (email) => {
+
+   let index =  personas.findIndex(persona)) =>{
+
+    return persona [2] = email;
+   });
+   if (index >-1 ) {
+   persona.splice(index,1);
+   }
+    devuelve un indice
+}
+
+
+ */
+
+ //PUNTO 6 hecho x el profe
+/*
+ * 6. Hacer una funcion que permita modificar nombre
+ *    buscando por mail.
+ * 
+ * */
+
+ // TODO ESTA EN EL GITHUB DEL PROFE
+
+
+
